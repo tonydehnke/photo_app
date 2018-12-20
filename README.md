@@ -1,5 +1,7 @@
 # README
 
+Photo App tuturial from Udemy Ultimate Rails Developer Course.
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
