@@ -41,33 +41,21 @@ padding-top: 5px;
 }
 
 .nav.navbar-nav {
+  .navbar-link {
+    border-radius: 5px;
+    color: #fff;
+    margin-top: 15px;
+    padding: 8px;
+  }
 
-.navbar-link {
+  .navbar-link:focus, .navbar-link:hover {
+    background: #3071a9;
+    color: #fff;
+  }
 
-border-radius: 5px;
-
-color: #fff;
-
-margin-top: 15px;
-
-padding: 8px;
-
-}
-
-.navbar-link:focus, .navbar-link:hover {
-
-background: #3071a9;
-
-color: #fff;
-
-}
-
-li a {
-
-margin-right: 5px;
-
-}
-
+  li a {
+  margin-right: 5px;
+  }
 }
 
 .nav.navbar-right li {
