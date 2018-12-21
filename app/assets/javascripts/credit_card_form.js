@@ -1,12 +1,12 @@
-$(document).on('ready turbolinks:load', function() {
+$(document).on('turbolinks:load', function() {
 
   var show_error, stripeResponseHandler, submitHandler;
 
-  submitHandler = function (event) {
+    submitHandler = function (event) {
     var $form = $(event.target);
     $form.find("input[type=submit]").prop("disabled", true);
 
-     if(Stripe){
+      if(Stripe){
       Stripe.card.createToken($form, stripeResponseHandler);
     } else {
       show_error("Failed to load credit card processing functionality. Please reload this page in your browser.")
@@ -14,14 +14,14 @@ $(document).on('ready turbolinks:load', function() {
     return false;
   };
 
-  $(".cc_form").on('submit', submitHandler);
+    $(".cc_form").on('submit', submitHandler);
 
-  stripeResponseHandler = function (status, response) {
+    stripeResponseHandler = function (status, response) {
     var token, $form;
 
-     $form = $('.cc_form');
+      $form = $('.cc_form');
 
-     if (response.error) {
+      if (response.error) {
       console.log(response.error.message);
       show_error(response.error.message);
       $form.find("input[type=submit]").prop("disabled", false);
@@ -38,7 +38,7 @@ $(document).on('ready turbolinks:load', function() {
     return false;
   };
 
-   show_error = function (message) {
+    show_error = function (message) {
     if($("#flash-messages").size() < 1) {
       $('div.container.main div:first').prepend("<div id='flash-messages'></div>")
     }
@@ -46,4 +46,4 @@ $(document).on('ready turbolinks:load', function() {
     $('.alert').delay(5000).fadeOut(3000);
     return false;
   };
-}); 
+});
